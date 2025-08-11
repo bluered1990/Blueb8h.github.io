@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>blueb8h's linktree</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         body {
@@ -24,11 +24,27 @@
             border-radius: 1rem;
             padding: 20px;
             box-shadow: 0 0 12px rgba(0,0,0,0.4);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
         }
 
+        /* Base hover scale */
         .social-card:hover {
-            transform: scale(1.02);
+            transform: scale(1.05);
+        }
+
+        /* Discord glow */
+        .social-card.discord:hover {
+            box-shadow: 0 0 20px rgba(88, 101, 242, 0.8);
+        }
+
+        /* YouTube glow */
+        .social-card.youtube:hover {
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+        }
+
+        /* Instagram glow */
+        .social-card.instagram:hover {
+            box-shadow: 0 0 20px rgba(253, 29, 29, 0.8), 0 0 30px rgba(131, 58, 180, 0.7);
         }
 
         .social-icon {
@@ -68,46 +84,76 @@
 
     <div class="container text-center mt-5">
         <h1>hello and welcome!</h1>
-        <br>
+        <br />
         <h4>here you can see my social media links (っ◔◡◔)っ</h4>
 
         <div class="row justify-content-center mt-5 g-4">
             <!-- Discord -->
             <div class="col-12">
-                <div class="card social-card">
+                <div class="card social-card discord" aria-label="Discord social card">
                     <div class="card-body">
                         <div class="d-flex align-items-center justify-content-center mb-3 gap-2">
                             <span class="fs-4">My Discord</span>
-                            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord Logo" class="social-icon">
+                            <img
+                                src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png"
+                                alt="Discord logo icon"
+                                class="social-icon"
+                            />
                         </div>
                         <p class="fs-5 mb-3" id="discord-id">blueb8h</p>
-                        <button class="btn copy-btn text-white" onclick="copyToClipboard()">Copy</button>
+                        <button
+                            aria-label="Copy Discord username"
+                            class="btn copy-btn text-white"
+                            onclick="copyToClipboard()"
+                        >
+                            Copy
+                        </button>
                     </div>
                 </div>
             </div>
 
             <!-- YouTube -->
             <div class="col-12">
-                <div class="card social-card">
+                <div class="card social-card youtube" aria-label="YouTube social card">
                     <div class="card-body">
                         <div class="d-flex align-items-center justify-content-center mb-3 gap-2">
                             <span class="fs-4">YouTube Channel</span>
-                            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube Logo" class="social-icon">
+                            <img
+                                src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
+                                alt="YouTube logo icon"
+                                class="social-icon"
+                            />
                         </div>
-                        <a href="https://www.youtube.com/@Blue-b8h" target="_blank" class="btn yt-btn text-white">Go to Channel</a>
+                        <a
+                            href="https://www.youtube.com/@Blue-b8h"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn yt-btn text-white"
+                            >Go to Channel</a
+                        >
                     </div>
                 </div>
             </div>
 
             <!-- Instagram -->
             <div class="col-12">
-                <div class="card social-card">
+                <div class="card social-card instagram" aria-label="Instagram social card">
                     <div class="card-body">
                         <div class="d-flex align-items-center justify-content-center mb-3 gap-2">
                             <span class="fs-4">Instagram</span>
-                            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram Logo" class="social-icon">
+                            <img
+                                src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png"
+                                alt="Instagram logo icon"
+                                class="social-icon"
+                            />
                         </div>
-                        <a href="https://www.instagram.com/blueb8h?igsh=MXd0eGl3aDR4Z2xtOA==" target="_blank" class="btn ig-btn text-white">Visit Profile</a>
+                        <a
+                            href="https://www.instagram.com/blueb8h?igsh=MXd0eGl3aDR4Z2xtOA=="
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn ig-btn text-white"
+                            >Visit Profile</a
+                        >
                     </div>
                 </div>
             </div>
@@ -122,6 +168,5 @@
             });
         }
     </script>
-
 </body>
 </html>
